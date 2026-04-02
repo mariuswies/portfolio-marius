@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #0400ff;
+  --blue-dark: #0000b8;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --column-count: 12;
+  --column-min: 40px;
+  --column-max: 100px;
+  --line-gap: 8px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--blue);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Page container ── */
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Dotted column lines ── */
+.dotted-columns {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+  z-index: 0;
+  padding: 0 16px;
+}
+
+.dotted-line {
+  width: 0;
+  flex: 1 1 clamp(var(--column-min), 8vw, var(--column-max));
+  max-width: var(--column-max);
+  border-right: 1.5px dotted rgba(255, 255, 255, 0.25);
+}
+
+/* ── Content ── */
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 32px 0;
+}
+
+/* ── Top section (WHO AM YOU + MW) ── */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.who-am-you {
+  max-width: 420px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--white);
+  padding: 4px 8px;
+  margin-bottom: 20px;
+}
+
+.who-am-you p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  margin-left: var(--line-gap);
+  margin-right: var(--line-gap);
+}
+
+/* ── MW Logo ── */
+.mw-logo {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--blue-dark);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.mw-logo span:first-child {
+  letter-spacing: -0.04em;
+}
+
+.mw-logo span:last-child {
+  letter-spacing: -0.04em;
+}
+
+/* ── Middle section ── */
+.middle-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.location-text {
+  max-width: 280px;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0 var(--line-gap);
+}
+
+/* ── HOW I WORK section ── */
+.how-i-work {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  padding-bottom: 24px;
+}
+
+.how-text,
+.work-text {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--black);
+  margin: 0 var(--line-gap);
+}
+
+.how-image {
+  position: relative;
+  width: clamp(120px, 18vw, 200px);
+  height: clamp(80px, 12vw, 140px);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.how-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.live-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #ff0000;
+  color: var(--white);
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+  z-index: 2;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 12px 32px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-name {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.footer-separator {
+  opacity: 0.5;
+}
+
+.footer-role {
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .content {
+    padding: 24px 16px 0;
+  }
+
+  .top-section {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .mw-logo {
+    font-size: 3.5rem;
+    align-self: flex-end;
+    margin-right: 8px;
+  }
+
+  .who-am-you {
+    max-width: 100%;
+  }
+
+  .how-i-work {
+    justify-content: center;
+  }
+
+  .how-text,
+  .work-text {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .footer {
+    padding: 10px 16px;
+  }
+
+  :root {
+    --column-min: 20px;
+    --column-max: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-image {
+    width: 80px;
+    height: 56px;
+  }
+
+  .mw-logo {
+    font-size: 2.5rem;
+  }
+
+  :root {
+    --column-min: 16px;
+    --column-max: 40px;
+  }
+}
