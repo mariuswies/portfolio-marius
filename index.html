@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-scheme="blue">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,8 +30,25 @@
         </p>
       </div>
 
-      <div class="mw-logo">
-        <img src="mw-logo.png" alt="MW monogram">
+      <div class="top-right">
+        <nav class="scheme-switcher" aria-label="Color scheme">
+          <button class="scheme-btn" data-scheme="blue" aria-label="Blue scheme">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#C5DBE8"/><path d="M16 1 A15 15 0 0 0 16 31 Z" fill="#0400ff"/></svg>
+          </button>
+          <button class="scheme-btn" data-scheme="lavender" aria-label="Lavender scheme">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#E8E0F0"/><path d="M16 1 A15 15 0 0 0 16 31 Z" fill="#8B7BB5"/></svg>
+          </button>
+          <button class="scheme-btn" data-scheme="coral" aria-label="Coral scheme">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#4A3F6B"/><path d="M16 1 A15 15 0 0 0 16 31 Z" fill="#E8918A"/></svg>
+          </button>
+          <button class="scheme-btn" data-scheme="bw" aria-label="Black and white scheme">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#ffffff"/><path d="M16 1 A15 15 0 0 0 16 31 Z" fill="#0a0a0a"/></svg>
+          </button>
+        </nav>
+        <span class="contrast-label">Contrast <span id="contrast-value">3,2</span></span>
+        <div class="mw-logo">
+          <img src="mw-logo.png" alt="MW monogram">
+        </div>
       </div>
 
       <section class="middle-section">
@@ -56,5 +73,7 @@
       <span class="footer-role">Product Designer</span>
     </footer>
   </div>
+
+  <script src="scheme.js"></script>
 </body>
 </html>
