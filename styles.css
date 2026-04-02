@@ -70,11 +70,12 @@ body {
   z-index: 1;
 }
 
-/* ── WHO AM YOU: columns 1–2 (between lines 1–3) ── */
+/* ── WHO AM YOU: column 1 (between lines 1–2) ── */
 .who-am-you {
-  grid-column: 1 / 3;
+  grid-column: 1 / 2;
   grid-row: 1;
   padding: 0 var(--gap);
+  overflow: hidden;
 }
 
 .section-label {
@@ -107,16 +108,18 @@ body {
   flex-direction: column;
   align-items: flex-end;
   padding: 0 var(--gap);
+  overflow: hidden;
 }
 
-/* ── Middle section: columns 2–3 (between lines 2–4) ── */
+/* ── Middle section: column 2 (between lines 2–3) ── */
 .middle-section {
-  grid-column: 2 / 4;
+  grid-column: 2 / 3;
   grid-row: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 var(--gap);
+  overflow: hidden;
 }
 
 .location-text {
@@ -125,14 +128,15 @@ body {
   line-height: 1.6;
 }
 
-/* ── HOW I WORK: columns 2–4 (between lines 2–5) ── */
+/* ── HOW I WORK: columns 3–4 (between lines 3–5) ── */
 .how-i-work {
-  grid-column: 2 / 5;
+  grid-column: 3 / 5;
   grid-row: 3;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 var(--gap);
+  overflow: hidden;
 }
 
 .how-text,
@@ -210,7 +214,7 @@ body {
   }
 
   .who-am-you {
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
   }
 
   .mw-logo {
