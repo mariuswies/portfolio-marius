@@ -42,11 +42,30 @@ body {
   grid-template-columns: repeat(4, 1fr);
   pointer-events: none;
   z-index: 0;
-  border-left: 1.5px dotted rgba(255, 255, 255, 0.3);
+  border-left: 1.5px dashed transparent;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0px,
+    rgba(255, 255, 255, 0.3) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+  background-size: 1.5px 12px;
+  background-repeat: repeat-y;
+  background-position: left top;
 }
 
 .dotted-line {
-  border-right: 1.5px dotted rgba(255, 255, 255, 0.3);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0px,
+    rgba(255, 255, 255, 0.3) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+  background-size: 1.5px 12px;
+  background-repeat: repeat-y;
+  background-position: right top;
 }
 
 /* ── Page layout ── */
