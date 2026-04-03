@@ -7,14 +7,14 @@
 }
 
 :root {
-  --bg: #0400ff;
-  --text: #ffffff;
-  --dark: #0000b8;
-  --accent: #0a0a0a;
-  --footer-bg: #0a0a0a;
-  --footer-text: #ffffff;
-  --line-color: rgba(255, 255, 255, 0.3);
-  --label-border: #ffffff;
+  --bg: #F0E4D8;
+  --text: #1a1a1a;
+  --dark: #333333;
+  --accent: #1a1a1a;
+  --footer-bg: #1a1a1a;
+  --footer-text: #F0E4D8;
+  --line-color: rgba(0, 0, 0, 0.15);
+  --label-border: #1a1a1a;
   --gap: 8px;
   --max-width: 1200px;
 }

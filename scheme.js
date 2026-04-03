@@ -137,4 +137,4 @@ document.querySelectorAll('.scheme-btn').forEach((btn) => {
   btn.addEventListener('click', () => applyScheme(btn.dataset.scheme));
 });
 
-applyScheme('blue');
+applyScheme('rgb');
