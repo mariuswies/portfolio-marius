@@ -90,7 +90,7 @@ function createRgbDots() {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     const rand = seededRandom(42);
-    const colors = ['#d47a7a', '#6ab56a', '#7b96d0'];
+    const colors = ['#c04040', '#2e8a2e', '#3860b8'];
     const cellW = 160;
     const cellH = 100;
     const cols = Math.ceil(window.innerWidth / cellW) + 1;
