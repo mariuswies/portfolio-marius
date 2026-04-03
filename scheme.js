@@ -104,7 +104,7 @@ function createRgbDots() {
           const x = baseX + 30 + rand() * 100;
           const y = baseY + 20 + rand() * 60;
           ctx.fillStyle = colors[i];
-          ctx.fillRect(Math.round(x), Math.round(y), 3, 3);
+          ctx.fillRect(Math.round(x), Math.round(y), 2, 2);
         }
       }
     }
