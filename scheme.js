@@ -40,12 +40,12 @@ const schemes = {
     labelBorder: '#0a0a0a'
   },
   rgb: {
-    bg: '#F0E4D8',
+    bg: '#EFDED2',
     text: '#1a1a1a',
     dark: '#333333',
     accent: '#1a1a1a',
     footerBg: '#1a1a1a',
-    footerText: '#F0E4D8',
+    footerText: '#EFDED2',
     lineColor: 'rgba(0, 0, 0, 0.15)',
     labelBorder: '#1a1a1a'
   }
@@ -73,6 +73,14 @@ function createRgbDots() {
   canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;display:none;';
   document.body.prepend(canvas);
 
+  function seededRandom(seed) {
+    let s = seed;
+    return function () {
+      s = (s * 16807 + 0) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  }
+
   function draw() {
     const dpr = window.devicePixelRatio || 1;
     canvas.width = window.innerWidth * dpr;
@@ -81,15 +89,20 @@ function createRgbDots() {
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-    const colors = ['#d94040', '#2d8a2d', '#3060cc'];
-    const cols = Math.ceil(window.innerWidth / 120);
-    const rows = Math.ceil(window.innerHeight / 80);
+    const rand = seededRandom(42);
+    const colors = ['#c43c3c', '#2a7a2a', '#3358b8'];
+    const cellW = 160;
+    const cellH = 100;
+    const cols = Math.ceil(window.innerWidth / cellW) + 1;
+    const rows = Math.ceil(window.innerHeight / cellH) + 1;
 
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
+        const baseX = col * cellW;
+        const baseY = row * cellH;
         for (let i = 0; i < 3; i++) {
-          const x = col * 120 + 20 + Math.random() * 80;
-          const y = row * 80 + 10 + Math.random() * 60;
+          const x = baseX + 30 + rand() * 100;
+          const y = baseY + 20 + rand() * 60;
           ctx.beginPath();
           ctx.arc(x, y, 2, 0, Math.PI * 2);
           ctx.fillStyle = colors[i];

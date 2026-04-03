@@ -7,12 +7,12 @@
 }
 
 :root {
-  --bg: #F0E4D8;
+  --bg: #EFDED2;
   --text: #1a1a1a;
   --dark: #333333;
   --accent: #1a1a1a;
   --footer-bg: #1a1a1a;
-  --footer-text: #F0E4D8;
+  --footer-text: #EFDED2;
   --line-color: rgba(0, 0, 0, 0.15);
   --label-border: #1a1a1a;
   --gap: 8px;
