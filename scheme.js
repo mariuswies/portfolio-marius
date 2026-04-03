@@ -38,6 +38,16 @@ const schemes = {
     footerText: '#ffffff',
     lineColor: 'rgba(0, 0, 0, 0.2)',
     labelBorder: '#0a0a0a'
+  },
+  rgb: {
+    bg: '#F0E4D8',
+    text: '#1a1a1a',
+    dark: '#333333',
+    accent: '#1a1a1a',
+    footerBg: '#1a1a1a',
+    footerText: '#F0E4D8',
+    lineColor: 'rgba(0, 0, 0, 0.15)',
+    labelBorder: '#1a1a1a'
   }
 };
 
@@ -56,6 +66,45 @@ function contrastRatio(hex1, hex2) {
   const darker = Math.min(l1, l2);
   return (lighter + 0.05) / (darker + 0.05);
 }
+
+function createRgbDots() {
+  const canvas = document.createElement('canvas');
+  canvas.id = 'rgb-dots';
+  canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;display:none;';
+  document.body.prepend(canvas);
+
+  function draw() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    const colors = ['#d94040', '#2d8a2d', '#3060cc'];
+    const cols = Math.ceil(window.innerWidth / 120);
+    const rows = Math.ceil(window.innerHeight / 80);
+
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        for (let i = 0; i < 3; i++) {
+          const x = col * 120 + 20 + Math.random() * 80;
+          const y = row * 80 + 10 + Math.random() * 60;
+          ctx.beginPath();
+          ctx.arc(x, y, 2, 0, Math.PI * 2);
+          ctx.fillStyle = colors[i];
+          ctx.fill();
+        }
+      }
+    }
+  }
+
+  draw();
+  window.addEventListener('resize', draw);
+  return canvas;
+}
+
+let rgbCanvas = null;
 
 function applyScheme(name) {
   const s = schemes[name];
@@ -79,6 +128,9 @@ function applyScheme(name) {
   document.querySelectorAll('.scheme-btn').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.scheme === name);
   });
+
+  if (!rgbCanvas) rgbCanvas = createRgbDots();
+  rgbCanvas.style.display = name === 'rgb' ? 'block' : 'none';
 }
 
 document.querySelectorAll('.scheme-btn').forEach((btn) => {
