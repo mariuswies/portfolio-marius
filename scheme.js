@@ -90,7 +90,7 @@ function createRgbDots() {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     const rand = seededRandom(42);
-    const colors = ['#c43c3c', '#2a7a2a', '#3358b8'];
+    const colors = ['#d46b6b', '#5aad5a', '#6888cc'];
     const cellW = 160;
     const cellH = 100;
     const cols = Math.ceil(window.innerWidth / cellW) + 1;
@@ -103,10 +103,8 @@ function createRgbDots() {
         for (let i = 0; i < 3; i++) {
           const x = baseX + 30 + rand() * 100;
           const y = baseY + 20 + rand() * 60;
-          ctx.beginPath();
-          ctx.arc(x, y, 2, 0, Math.PI * 2);
           ctx.fillStyle = colors[i];
-          ctx.fill();
+          ctx.fillRect(Math.round(x), Math.round(y), 4, 4);
         }
       }
     }
