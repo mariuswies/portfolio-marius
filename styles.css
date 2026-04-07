@@ -105,8 +105,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1px solid var(--text);
-  border-left: 1px dashed var(--text);
+  border: 1.5px solid var(--label-border);
   padding: 4px 8px;
   margin-bottom: 20px;
   transition: border-color 0.3s;
