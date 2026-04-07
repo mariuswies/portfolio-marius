@@ -48,11 +48,11 @@ body {
   background-image: repeating-linear-gradient(
     to bottom,
     var(--line-color) 0px,
-    var(--line-color) 6px,
-    transparent 6px,
-    transparent 12px
+    var(--line-color) 4px,
+    transparent 4px,
+    transparent 8px
   );
-  background-size: 1px 12px;
+  background-size: 1px 8px;
   background-repeat: repeat-y;
   background-position: left top;
 }
@@ -61,11 +61,11 @@ body {
   background-image: repeating-linear-gradient(
     to bottom,
     var(--line-color) 0px,
-    var(--line-color) 6px,
-    transparent 6px,
-    transparent 12px
+    var(--line-color) 4px,
+    transparent 4px,
+    transparent 8px
   );
-  background-size: 1px 12px;
+  background-size: 1px 8px;
   background-repeat: repeat-y;
   background-position: right top;
 }
