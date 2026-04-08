@@ -1,13 +1,13 @@
 const schemes = {
-  blue: {
-    bg: '#0400ff',
-    text: '#ffffff',
-    dark: '#0000b8',
-    accent: '#0a0a0a',
-    footerBg: '#0a0a0a',
-    footerText: '#ffffff',
-    lineColor: 'rgba(255, 255, 255, 0.3)',
-    labelBorder: '#ffffff'
+  mint: {
+    bg: '#BFFFBD',
+    text: '#000000',
+    dark: '#000000',
+    accent: '#000000',
+    footerBg: '#000000',
+    footerText: '#BFFFBD',
+    lineColor: 'rgba(0, 0, 0, 0.2)',
+    labelBorder: '#000000'
   },
   lavender: {
     bg: '#E8E0F0',
@@ -19,15 +19,15 @@ const schemes = {
     lineColor: 'rgba(139, 123, 181, 0.35)',
     labelBorder: '#2D2050'
   },
-  coral: {
-    bg: '#E8918A',
-    text: '#2D2050',
-    dark: '#4A3F6B',
-    accent: '#4A3F6B',
-    footerBg: '#4A3F6B',
-    footerText: '#E8918A',
-    lineColor: 'rgba(74, 63, 107, 0.35)',
-    labelBorder: '#2D2050'
+  dark: {
+    bg: '#000000',
+    text: '#F2F0E6',
+    dark: '#000000',
+    accent: '#BFFFBD',
+    footerBg: '#F2F0E6',
+    footerText: '#000000',
+    lineColor: 'rgba(242, 240, 230, 0.2)',
+    labelBorder: '#F2F0E6'
   },
   bw: {
     bg: '#ffffff',
