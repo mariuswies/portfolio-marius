@@ -134,7 +134,20 @@ function applyScheme(name) {
 
   const ratio = contrastRatio(s.bg, s.text);
   const formatted = ratio.toFixed(1).replace('.', ',');
+  const passAA = ratio >= 4.5;
+  const passAALarge = ratio >= 3;
   document.getElementById('contrast-value').textContent = formatted;
+  const ratingEl = document.getElementById('wcag-rating');
+  if (passAA) {
+    ratingEl.textContent = 'WCAG AA';
+    ratingEl.className = 'wcag-pass';
+  } else if (passAALarge) {
+    ratingEl.textContent = 'WCAG AA Large';
+    ratingEl.className = 'wcag-partial';
+  } else {
+    ratingEl.textContent = 'Fail AA';
+    ratingEl.className = 'wcag-fail';
+  }
 
   document.querySelectorAll('.scheme-btn').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.scheme === name);
